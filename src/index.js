@@ -1,23 +1,20 @@
 import './styles.css';
-//import {promesaLenta,promesaMedia,promesaRapida} from './js/promesa';
-import{buscarPersona, buscarPersonaAsync} from './js/promesa'
-
-buscarPersona('MEAN')
-    .then(persona=>console.log(persona))
-    .catch(console.warn);
-
-buscarPersonaAsync('PESV')
-    .then(persona=>console.log(persona))
-    .catch(console.warn);
-
-buscarPersonaAsync('PESC')
-    .then(persona=>console.log(persona))
-    .catch(console.warn);
+//import { obtenerPesonasArr, obtenerPersonaAwait } from './js/await-eje';
+import { personasCiclo, personaIfAwait } from './js/await-eje';
+personasCiclo();
+personaIfAwait('PESV');
 /*
-promesaLenta.then(console.log);
-promesaMedia.then(mensaje => console.log(mensaje));
-promesaRapida.then(console.log);
+console.time('await');
 
-Promise.race([promesaLenta,promesaMedia,promesaRapida])
-.then(console.log);
+obtenerPersonaAwait('MEAD')
+    .then( persona =>{
+        console.log(persona);
+        console.timeEnd('await');
+
+    }).catch(console.warn);
+
+obtenerPesonasArr().then(personas =>{
+    console.table(personas);
+    console.timeEnd('await');
+});
 */

@@ -18,7 +18,7 @@ export const buscarPersona = (curp) => {
     return new Promise( (resolve, reject) =>{
 
         if (persona) {
-            resolve(persona);
+            setTimeout(() => resolve(persona), 1000);
         } else {
             reject(`No existe persona con el CURP ${curp}`);
         }
